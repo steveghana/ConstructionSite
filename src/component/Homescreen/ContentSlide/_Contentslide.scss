@@ -1,0 +1,97 @@
+@media (min-width: 43em) {
+  .contentSlide_wrapper {
+    @include flex(row, center, flex-end);
+    transform: translateY(30px);
+    margin-top: auto;
+    .content_container {
+      @include flex(row, space-between, center);
+      height: 50vh;
+      .slide_tracker,
+      .slide_content {
+        @include flex(column, unset, unset, 1rem);
+      }
+      .slide_tracker {
+        margin-right: 4rem;
+        height: 70%;
+        .tracker {
+          width: 10px;
+          border-radius: 5px;
+          height: 50px;
+          background-color: $bgcolor;
+        }
+      }
+      .slide_content {
+        min-width: 35vw;
+        height: 100%;
+        align-items: flex-start;
+        justify-content: center;
+        .slide_header {
+          @include fontProperties(5rem, bolder, $bgcolor);
+          font-family: $font-family;
+        }
+        .slide_description {
+          @include fontProperties(3rem, normal, $bg-text-descr);
+        }
+        .slide_btn {
+          @include flex(center, flex-start, center, 2rem);
+          background-color: $bgcolor;
+          padding: 1.1rem 5rem 1.1rem 1.1rem;
+          width: auto !important;
+          border-radius: 30px;
+          color: $text-diff;
+        }
+      }
+      .product_image_container {
+        min-width: 60%;
+        position: relative;
+        overflow: hidden;
+        .slider_btn {
+          @include pseudo(40px, 40px);
+          right: 3%;
+          top: 20%;
+          @include flex(unset, center, center);
+          background-color: $bgcolor;
+          color: $text-diff;
+          border-radius: 50%;
+        }
+        .product {
+          &_img {
+            min-height: 80vh;
+            min-width: 50vw;
+            overflow: hidden;
+            position: relative;
+            z-index: 3;
+            img {
+              transform: scaleX(-1) rotate(20deg) translateY(-10px)
+                translateZ(0px);
+            }
+            &_back {
+              @include pseudo(350px, 350px);
+              border-radius: 50%;
+              transform-style: preserve-3d;
+              inset: 10px 0 0 0;
+              transform: translate(80%, 55%);
+              z-index: -1;
+              background-color: #c098a1;
+              box-shadow: 0px 0px 2rem 0px rgba($color: #494949, $alpha: 0.2);
+            }
+          }
+          &_name {
+            @include fontProperties(initial, bolder, $bgcolor);
+            position: absolute;
+            bottom: 30%;
+            right: 6%;
+            &::before {
+              @include pseudo(7px, 50px);
+              right: -12%;
+              border-radius: 30px;
+              top: -40%;
+              background-color: $bgcolor;
+              box-shadow: 0px 0px 2rem 0px rgba($color: #494949, $alpha: 0.2);
+            }
+          }
+        }
+      }
+    }
+  }
+}

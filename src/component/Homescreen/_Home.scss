@@ -1,0 +1,11 @@
+@import "../Homescreen/ContentSlide/Contentslide";
+@import "../Homescreen/Nav/Nav";
+@import "../Homescreen/SocialIcons/social.scss";
+.home_container {
+  @include flex(column, space-between);
+  height: 100vh;
+  overflow: hidden;
+  background-color: #eceef0;
+  position: relative;
+  padding: 2rem 5rem;
+}

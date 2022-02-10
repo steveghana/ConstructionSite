@@ -1,0 +1,34 @@
+.nav {
+  @include flex(unset, unset, unset, unset);
+  z-index: 100;
+  &_item_header {
+    @include fontProperties(1.3rem, bolder, $bgcolor);
+    margin-right: auto;
+  }
+  &_item_wrapper {
+    @include flex(row, unset, center, 2rem);
+    transition: opacity 400ms ease-out;
+    .nav_content {
+      display: flex;
+      @include flex(row, center, center, 2rem);
+      margin-right: 7rem;
+      margin-left: auto;
+      &_list_item {
+        cursor: pointer;
+        color: $bgcolor;
+        padding: 0.1rem;
+        transition: 400ms ease-in-out;
+        &:hover {
+          opacity: 0.5;
+        }
+        &:nth-of-type(1) {
+          border-bottom: 4px solid $link-hover-color;
+        }
+      }
+    }
+  }
+  &_item_icons {
+    @include flex(row, unset, center, 1rem);
+    padding-right: 2rem;
+  }
+}

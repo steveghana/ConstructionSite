@@ -1,0 +1,18 @@
+@mixin pseudo($width, $height, $content: "") {
+  content: $content;
+  position: absolute;
+  width: $width;
+  height: $height;
+}
+@mixin flex($flexDirection, $justify, $aligndirection: initial, $gap: 0rem) {
+  display: flex;
+  justify-content: $justify;
+  flex-direction: $flexDirection;
+  align-items: $aligndirection;
+  gap: $gap;
+}
+@mixin fontProperties($size, $weigth, $color) {
+  font-size: $size;
+  font-weight: $weigth;
+  color: $color;
+}
